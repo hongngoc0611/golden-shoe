@@ -1,0 +1,22 @@
+$font: "Rubik", sans-serif;
+$text-color: #303841;
+$primary-color: #f6c90e;
+$gray-color: #777;
+
+$fw-0: 700;
+
+$fs-0: 14px;
+$fs-1: 16px;
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

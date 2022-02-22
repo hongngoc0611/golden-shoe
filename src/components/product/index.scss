@@ -1,0 +1,167 @@
+@import "../../variables/variables.scss";
+
+.card{
+    background-color: #fff;
+    width: 360px;
+    height: 600px;
+    box-shadow: 0 3.2px 2.2px rgb(0 0 0 / 2%), 0 7px 5.4px rgb(0 0 0 / 3%), 0 12.1px 10.1px rgb(0 0 0 / 4%), 0 19.8px 18.1px rgb(0 0 0 / 4%), 0 34.7px 33.8px rgb(0 0 0 / 5%), 0 81px 81px rgb(0 0 0 / 7%);
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 0 28px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        background-color: $primary-color;
+        left: -50%;
+        top: -20%;
+        z-index: 0;
+    }
+    &__top{
+        margin: 12px 0;
+        position: relative;
+        img{
+            display: block;
+            width: 50px;
+        }
+    }
+    &__title{
+        font-size: $fs-0 + 10;
+        font-weight: $fw-0;
+        margin: 16px 0;
+        position: relative;
+        &-price{
+            float: right;
+        }
+    }
+    &__content{
+        overflow: auto;
+        height: calc(100% - 98px);       
+        position: relative;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            width: 0 !important;
+            display: none;
+        }
+        &-empty{
+            position: absolute;
+        }
+        
+        &-text{
+            font-size: $fs-0;
+        }
+
+    }
+}
+.shop__item {
+    padding: 40px 0;
+    &:first-child{
+        padding-top: 0;
+    }
+    &-image{
+        background-color: rgb(225, 231, 237);
+        border-radius: 30px;
+        height: 380px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        img{
+            display: block;
+            width: 100%;
+            margin-left: -16px;
+            transform: rotate(-24deg);
+            filter: drop-shadow(0 30px 20px rgba(0,0,0,.2));
+        }
+    }
+
+    &-title{
+        font-weight: $fw-0;
+        line-height: 1.5;
+        margin: 26px 0 20px 0;
+        font-size: $fs-1 + 4;
+    }
+    &-desc{
+        color: $gray-color;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: $fs-0 - 1;
+    
+    }
+    &-bottom{
+        @include flex-between;
+    }
+    &-price{
+        font-weight: $fw-0;
+        font-size: $fs-0 + 4;
+    }
+    &-button{
+        position: relative;
+        font-size: $fs-0;
+        font-weight: $fw-0; 
+        width: auto;
+        height: 46px;
+        min-width: 46px;
+        cursor: pointer;
+        background-color: $primary-color;
+        padding: 16px 20px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        transition: all .25s ease;
+        overflow: hidden;
+        &:hover{
+            box-shadow: -2px 2px 4px rgb(0 0 0 / 15%);
+            background-color: $primary-color;
+        }
+        .inactive{
+            width: 46px;
+            pointer-events: none;
+            cursor: default;
+            }
+        &-cover{
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            @include flex-center;
+            &-check-icon{
+                width: 100%;
+                height: 100%;
+                transform: translate(-100%,-73%) rotate(-45deg);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                &::before{
+                    width: 3px;
+                    height: 50%;
+                    content: "";
+                    display: block;
+                    background-color: #303841;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    border-radius: 10px;
+                }
+                &::after{
+                    width: 100%;
+                    height: 3px;
+                    content: "";
+                    display: block;
+                    background-color: #303841;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        
+    }
+}
+

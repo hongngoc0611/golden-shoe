@@ -1,0 +1,128 @@
+@import "../../variables/variables.scss";
+
+.your-card{
+    display: flex;
+    padding: 20px 0;
+    
+   &__left{
+       animation: fadeIn cubic-bezier(.79, .01, .22, 1) 0.9s; 
+             
+   }
+   
+    &__image{
+        width: 90px;
+        height: 90px;
+        border-radius: 100%;
+        margin-right: 34px;
+        img{
+            display: block;
+            width: 140%;
+            transform: rotate(-28deg) translateY(-40px);
+            filter: drop-shadow(0 30px 20px rgba(0,0,0,.2));
+        }
+    }
+
+    &__name{
+        font-size: $fs-0;
+        font-weight: $fw-0;
+        line-height: 1.5;
+        margin-bottom: 10px;
+       
+        animation: stagger .3s linear alternate;
+        animation-delay: 0.6s;
+        
+    }
+
+    &__price{
+        font-size: 20px;
+        font-weight: $fw-0;
+        margin-bottom: 16px;
+        animation: stagger .3s linear alternate;
+        animation-delay: 0.8s;
+        
+    }
+
+    &__action, &__math{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        animation: stagger .3s linear alternate;
+        animation-delay: 1s;
+        
+    }
+
+    &__button{
+        cursor: pointer;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        border-radius: 100%;
+        background-color: #eee;
+        font-size: $fs-1;
+        font-weight:  $fw-0;
+        @include flex-center;
+        transition: .2s;
+        &:hover{
+            background-color: #ddd;
+        }
+    }
+    &__number{
+        font-size: $fs-0;
+        margin: 0 8px;
+        width: 20px;
+        text-align: center;
+    }
+
+    &__remove{
+        margin-left: 60px;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        transition: all .25s ease;
+        border-radius: 100%;
+        @include flex-center;
+        background-color: $primary-color;
+        transition: .2s;
+        img{
+            width: 16px;
+            height: 16px;
+        }
+
+        &:hover{
+            background-color: $primary-color;
+            box-shadow: -2px 2px 4px rgb(0 0 0 / 15%);
+        }
+       
+    }
+}
+
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: scale(0.5,0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes stagger {
+    0% {
+        opacity: 0;
+        
+        
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(30px);
+    }
+     
+    100%{
+        
+        transform: translateX(0);
+       
+    }
+    
+}
